@@ -10,7 +10,11 @@ const App = () => {
       <Text style={style.title}>{question.question}</Text>
       <View style={style.optionsContainer}>
         {question.options.map((option) => (
-          <ImageOption image={option.image} text={option.text} />
+          <ImageOption
+            key={option.id}
+            image={option.image}
+            text={option.text}
+          />
         ))}
       </View>
     </View>
