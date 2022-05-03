@@ -5,7 +5,7 @@ import ImageOption from "./src/components/ImageOption";
 import question from "./assets/data/oneQuestionWithOption";
 
 const App = () => {
-  const state = useState();
+  const [selected, setSelected] = useState(null);
   return (
     <View style={style.root}>
       <Text style={style.title}>{question.question}</Text>
@@ -15,6 +15,8 @@ const App = () => {
             key={option.id}
             image={option.image}
             text={option.text}
+            isSelected={selected?.id === option.id}
+            onPress={() => setSelected(option)}
           />
         ))}
       </View>
