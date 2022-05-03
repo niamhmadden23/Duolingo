@@ -17,6 +17,7 @@ const style = StyleSheet.create({
 
     alignItems: "center",
   },
+
   selectedContainer: {
     backgroundColor: "#DDF4FE",
     borderColor: "#81D5FE",
