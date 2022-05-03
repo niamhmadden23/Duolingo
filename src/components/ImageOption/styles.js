@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 const style = StyleSheet.create({
   optionContainer: {
     // border
+
     borderWidth: 2,
     borderBottomWidth: 4,
     borderColor: "lightgrey",

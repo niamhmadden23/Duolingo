@@ -10,6 +10,7 @@ const style = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     alignSelf: "stretch",
+    marginTop: 30,
     padding: 10,
   },
   optionsContainer: {
