@@ -12,26 +12,14 @@ const style = StyleSheet.create({
     alignSelf: "stretch",
     padding: 10,
   },
-  optionContainer: {
-    borderWidth: 2,
-    borderBottomWidth: 4,
-    borderColor: "lightgrey",
-    borderRadius: 10,
-    width: "50%",
-    height: "50%",
-  },
   optionsContainer: {
-    backgroundColor: "red",
+    justifyContent: "center",
     width: "100%",
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
+    padding: 10,
   },
-  optionImage: {
-    width: 100,
-    height: 100,
-  },
-  optionText: {},
 });
 
 export default style;
