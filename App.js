@@ -3,8 +3,12 @@ import { Text, View, Image } from "react-native";
 import style from "./App.styles";
 import ImageOption from "./src/components/ImageOption";
 import question from "./assets/data/oneQuestionWithOption";
+import Button from "./src/components/Button";
 
 const App = () => {
+  const onButtonPress = () => {
+    console.warn("button pressed");
+  };
   const [selected, setSelected] = useState(null);
   return (
     <View style={style.root}>
@@ -20,6 +24,7 @@ const App = () => {
           />
         ))}
       </View>
+      <Button text="Check" onPress={onButtonPress} />
     </View>
   );
 };
