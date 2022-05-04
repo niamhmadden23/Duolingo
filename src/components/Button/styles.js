@@ -19,6 +19,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textDecorationLine: "underline",
   },
+
+  disabledContainer: {
+    backgroundColor: "grey",
+    borderColor: "grey",
+  },
 });
 
 export default styles;

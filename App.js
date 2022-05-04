@@ -24,7 +24,7 @@ const App = () => {
           />
         ))}
       </View>
-      <Button text="Check" onPress={onButtonPress} />
+      <Button text="Check" onPress={onButtonPress} disabled={!selected} />
     </View>
   );
 };
