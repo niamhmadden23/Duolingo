@@ -6,21 +6,6 @@ const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    alignSelf: "stretch",
-    marginTop: 30,
-    padding: 10,
-  },
-  optionsContainer: {
-    justifyContent: "center",
-    width: "100%",
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    padding: 10,
-  },
 });
 
 export default style;
