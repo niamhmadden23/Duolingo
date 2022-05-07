@@ -1,20 +1,37 @@
-import React, { useState } from "react";
-import { Text, View, Image } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Text, View, Image, Alert } from "react-native";
 import style from "./App.styles";
 import ImageOption from "./src/components/ImageOption";
-import question from "./assets/data/oneQuestionWithOption";
+import questions from "./assets/data/imageMulatipleChoiceQuestions";
 import Button from "./src/components/Button";
 
 const App = () => {
-  const onButtonPress = () => {
-    console.warn("button pressed");
-  };
   const [selected, setSelected] = useState(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(
+    questions[currentQuestionIndex]
+  );
+
+  useEffect(() => {
+    console.log("use effect");
+    setCurrentQuestion(questions[currentQuestionIndex]);
+  }, [currentQuestionIndex]);
+
+  const onButtonPress = () => {
+    if (selected.correct === true) {
+      Alert.alert("corrrect answer");
+      // if correct move to next question
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelected(null);
+    } else {
+      Alert.alert("Not quite...try again");
+    }
+  };
   return (
     <View style={style.root}>
-      <Text style={style.title}>{question.question}</Text>
+      <Text style={style.title}>{currentQuestion.question}</Text>
       <View style={style.optionsContainer}>
-        {question.options.map((option) => (
+        {currentQuestion.options.map((option) => (
           <ImageOption
             key={option.id}
             image={option.image}
