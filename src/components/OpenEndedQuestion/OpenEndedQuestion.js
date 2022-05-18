@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image, TextInput } from "react-native";
 import Button from "../Button";
 import styles from "./styles";
 import mascot from "../../../assets/images/mascot.png";
 
 const OpenEndedQuestion = ({ question, onCorrect, onWrong }) => {
+  const [input, setInput] = useState("");
+
   const onButtonPress = () => {
-    console.log("selected");
+    if (question.answer.toLowerCase().trim() === input.toLowerCase().trim()) {
+      onCorrect();
+    } else {
+      onWrong();
+    }
+    setInput("");
   };
   return (
     <>
@@ -20,10 +27,14 @@ const OpenEndedQuestion = ({ question, onCorrect, onWrong }) => {
         </View>
       </View>
       <TextInput
+        value={input}
+        onChangeText={setInput}
         style={styles.textInput}
+        textAlignVertical="top"
+        multiline
         placeholder="type in english"
       ></TextInput>
-      <Button text="Check" onPress={onButtonPress} disabled={true} />
+      <Button text="Check" onPress={onButtonPress} disabled={false} />
     </>
   );
 };
